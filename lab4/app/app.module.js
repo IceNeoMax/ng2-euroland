@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./core/home.component');
 var product_component_1 = require('./products/product.component');
@@ -22,6 +23,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
                 router_1.RouterModule.forRoot([
                     { path: 'home', component: home_component_1.HomeComponent },
                     { path: 'products', component: product_component_1.ProductComponent },

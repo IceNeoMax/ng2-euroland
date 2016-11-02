@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 
 
 export class ProductComponent { 
+    listFilter: string = 'hi';
    products: [any] = [
         {
             "name":"Gau Bong",

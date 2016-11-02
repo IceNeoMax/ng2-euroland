@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import  { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/home.component';
@@ -10,6 +11,7 @@ import { CategoryComponent } from './category/category.component';
 @NgModule({
   imports: [
             BrowserModule,
+            FormsModule,
             RouterModule.forRoot([
                 { path: 'home', component: HomeComponent },
                 { path: 'products', component: ProductComponent },
