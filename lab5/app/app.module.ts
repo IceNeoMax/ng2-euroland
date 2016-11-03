@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import  { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './core/home.component';
 import { ProductComponent } from './products/product.component';
 import { CategoryComponent } from './category/category.component';
+import { HomeComponent } from './core/home.component';
 
 @NgModule({
   imports: [

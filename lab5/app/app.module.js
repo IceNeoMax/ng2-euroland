@@ -13,9 +13,9 @@ var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var home_component_1 = require('./core/home.component');
 var product_component_1 = require('./products/product.component');
 var category_component_1 = require('./category/category.component');
+var home_component_1 = require('./core/home.component');
 var AppModule = (function () {
     function AppModule() {
     }

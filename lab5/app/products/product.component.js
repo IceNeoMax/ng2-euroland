@@ -53,7 +53,8 @@ var ProductComponent = (function () {
     ProductComponent = __decorate([
         core_1.Component({
             selector: 'product-wrapper',
-            templateUrl: 'app/products/product.component.html'
+            moduleId: module.id,
+            templateUrl: 'product.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], ProductComponent);
