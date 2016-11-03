@@ -17,14 +17,16 @@
                     <tr>
                         <th><button class="btn btn-info" (click)='showInfo()'>Show</button></th>
                         <th>Product</th>
+                        <th>Category</th>
                         <th>Code</th>
                         <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'> 
+                    <tr *ngFor='let product of products | filterProduct:listFilter'> 
                             <th><img *ngIf='flagShow' [src]='product.image' style="width:100px;"></th>
                             <th>{{product.name}}</th>
+                            <th>{{product.type}}</th>
                             <th>{{product.code}}</th>
                             <th > {{ product.price | currency:'USD':true:'1.2-2'}}</th>      
                     </tr>

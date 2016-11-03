@@ -16,6 +16,7 @@ var app_component_1 = require('./app.component');
 var product_component_1 = require('./products/product.component');
 var category_component_1 = require('./category/category.component');
 var home_component_1 = require('./core/home.component');
+var product_pipe_1 = require('./helper/product.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +36,8 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 product_component_1.ProductComponent,
-                category_component_1.CategoryComponent
+                category_component_1.CategoryComponent,
+                product_pipe_1.FilterProductPipe
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

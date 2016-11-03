@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './products/product.component';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './core/home.component';
+import { FilterProductPipe } from './helper/product.pipe';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './core/home.component';
   declarations: [ AppComponent,
                   HomeComponent,
                   ProductComponent,
-                  CategoryComponent
+                  CategoryComponent,
+                  FilterProductPipe
                 ],
   bootstrap: [AppComponent]
 })
