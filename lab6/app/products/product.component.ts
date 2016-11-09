@@ -1,7 +1,6 @@
 
 import { Component } from '@angular/core';
 import { Product } from '../model/product';
-//import { FilterProductPipe } from '../helper/product.pipe';
 
 @Component({
     selector: 'product-wrapper',
@@ -12,41 +11,47 @@ import { Product } from '../model/product';
 
 export class ProductComponent { 
     listFilter: string = '';
+    rateList: string='';
    products: Product[] = [
         {
             "name":"Gau Bong Meo",
             "image": "assets/img/1.png",
             "price": 4500,
             "code": "ASDFV",
-            "type":"big"
+            "type":"big",
+            "rate":4.2
         },
-         {
+        {
             "name":"Cho Khong Lo",
             "image": "assets/img/2.png",
             "price": 5000,
             "code": "ASDFV",
-            "type":"small"
+            "type":"small",
+            "rate":3.8
         }, 
         {
             "name":"Gau Meo Bong",
             "image": "assets/img/3.png",
             "price": 1000,
             "code": "ASDFV",
-            "type":"medium"
+            "type":"medium",
+            "rate":2
         }, 
         {
             "name":"Con Ga Bong",
             "image": "assets/img/4.png",
             "price": 3000,
             "code": "ASDFV",
-            "type":"small"
+            "type":"small",
+            "rate":5
         }, 
         {
             "name":"Con Lon ",
             "image": "assets/img/5.png",
             "price": 2500,
             "code": "ASDFV",
-            "type":"medium"
+            "type":"medium",
+            "rate":3.2
         },
     ];
     ngOnInit(){
@@ -57,6 +62,10 @@ export class ProductComponent {
 
     showInfo(){
         this.flagShow = !this.flagShow;
+    }
+
+    onRatingClicked(mess: string): void{
+        this.rateList += mess;
     }
 
 }

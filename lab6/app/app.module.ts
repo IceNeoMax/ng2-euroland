@@ -8,6 +8,7 @@ import { ProductComponent } from './products/product.component';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './core/home.component';
 import { FilterProductPipe } from './helper/product.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { FilterProductPipe } from './helper/product.pipe';
                   HomeComponent,
                   ProductComponent,
                   CategoryComponent,
-                  FilterProductPipe
+                  FilterProductPipe,
+                  StarComponent
                 ],
   bootstrap: [AppComponent]
 })
