@@ -12,12 +12,14 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var product_component_1 = require('./products/product.component');
 var category_component_1 = require('./category/category.component');
 var home_component_1 = require('./core/home.component');
 var product_pipe_1 = require('./helper/product.pipe');
 var star_component_1 = require('./shared/star.component');
+var product_service_1 = require('./services/product.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,6 +28,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 router_1.RouterModule.forRoot([
                     { path: 'home', component: home_component_1.HomeComponent },
                     { path: 'products', component: product_component_1.ProductComponent },
@@ -41,6 +44,7 @@ var AppModule = (function () {
                 product_pipe_1.FilterProductPipe,
                 star_component_1.StarComponent
             ],
+            providers: [product_service_1.ProductService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

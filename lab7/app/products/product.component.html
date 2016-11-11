@@ -9,7 +9,8 @@
             <div class="col-md-6">Filter:{{rateList}}</div>
         </div>
         <div class="row">
-            <div class="col-md-6" *ngIf='products.length >= 5'>There are more than 5 products</div>
+            <div class="col-md-6" *ngIf='products && products.length >= 5'>There are more than 5 products</div>
+
         </div>
         <div class="table-responsive">
             <table class="table">

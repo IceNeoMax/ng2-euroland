@@ -9,57 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var product_service_1 = require('../services/product.service');
 var ProductComponent = (function () {
-    function ProductComponent() {
+    function ProductComponent(_productService) {
+        this._productService = _productService;
         this.listFilter = '';
         this.rateList = '';
-        this.products = [
-            {
-                "name": "Gau Bong Meo",
-                "image": "assets/img/1.png",
-                "price": 4500,
-                "code": "ASDFV",
-                "type": "big",
-                "rate": 4.2
-            },
-            {
-                "name": "Cho Khong Lo",
-                "image": "assets/img/2.png",
-                "price": 5000,
-                "code": "ASDFV",
-                "type": "small",
-                "rate": 3.8
-            },
-            {
-                "name": "Gau Meo Bong",
-                "image": "assets/img/3.png",
-                "price": 1000,
-                "code": "ASDFV",
-                "type": "medium",
-                "rate": 2
-            },
-            {
-                "name": "Con Ga Bong",
-                "image": "assets/img/4.png",
-                "price": 3000,
-                "code": "ASDFV",
-                "type": "small",
-                "rate": 5
-            },
-            {
-                "name": "Con Lon ",
-                "image": "assets/img/5.png",
-                "price": 2500,
-                "code": "ASDFV",
-                "type": "medium",
-                "rate": 3.2
-            },
-        ];
         //public prop
         this.flagShow = false; //default
     }
     ProductComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.flagShow = true;
+        this._productService.getProduct()
+            .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMess = error; });
     };
     ProductComponent.prototype.showInfo = function () {
         this.flagShow = !this.flagShow;
@@ -73,7 +36,7 @@ var ProductComponent = (function () {
             moduleId: module.id,
             templateUrl: 'product.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [product_service_1.ProductService])
     ], ProductComponent);
     return ProductComponent;
 }());
