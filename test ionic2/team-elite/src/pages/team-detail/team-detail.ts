@@ -16,7 +16,7 @@ export class TeamDetailPage {
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello TeamDetailPage Page');
+    
   }
 
 }

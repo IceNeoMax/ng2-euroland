@@ -1,44 +1,38 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
+
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Dota Teams</ion-title>
+    <ion-title>Your Team</ion-title>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  <h3>Your Dota Teams Shows Up</h3>
-
-<ion-content class="card-background-page">
-
-  
-    <ion-card>
-        <img src="assets/img/Navi.png"/>
-        <div class="card-title">São Paulo</div>
-        <div class="card-subtitle">41 Listings</div>
-    </ion-card>
-  
-    
-
-  <ion-card>
-    <img src="assets/img/liquid.jpg"/>
-    <div class="card-title">Amsterdam</div>
-    <div class="card-subtitle">64 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/OG.png"/>
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/img/LGD.jpg"/>
-    <div class="card-title">Madison</div>
-    <div class="card-subtitle">28 Listings</div>
-  </ion-card>
-
-</ion-content>
-
+  <ion-list no-lines>
+    <ion-item-sliding>
+      <ion-item (click)="intoTeamDetail(team)">
+        <ion-avatar item-left>
+          <img src="assets/img/icon_Navi.png">
+        </ion-avatar>      
+          
+        <h2>Natus Vincere</h2>
+        <p>Ukraine • 2010</p>
+        <ion-icon color="primary" name="star" item-right>100</ion-icon>
+      </ion-item>
+      
+      <ion-item-options>
+        <button ion-button color="danger" (click)="removeItem()"><ion-icon name="trash"></ion-icon> Delete</button>
+      </ion-item-options>
+  </ion-item-sliding>
+ 
+  </ion-list>
 </ion-content>

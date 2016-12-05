@@ -4,6 +4,8 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { TournamentPage } from '../pages/tournament/tournament';
+import { TeamsPage } from '../pages/teams/teams';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 @Component({
@@ -22,7 +24,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Your Dota Teams', component: HomePage },
-      { title: 'Tournaments', component: TournamentPage }
+      { title: 'Tournaments', component: TournamentPage },
+      { title: 'Top 10 teams', component: TeamsPage }
     ];
 
   }

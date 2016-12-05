@@ -15,7 +15,7 @@ export class TeamsPage {
 
   constructor(public navCtrl: NavController) {}
 
-  ionViewDidLoad() {
+  introTeam() {
     console.log('Hello TeamsPage Page');
   }
 
