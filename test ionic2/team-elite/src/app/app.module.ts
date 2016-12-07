@@ -7,6 +7,7 @@ import { TeamsPage } from '../pages/teams/teams';
 import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { TourDetailPage } from '../pages/tour-detail/tour-detail';
 import { NewsPage } from '../pages/news/news';
+import { Data } from '../pages/providers/data';
 
 
 @NgModule({
@@ -32,6 +33,6 @@ import { NewsPage } from '../pages/news/news';
     TourDetailPage,
     NewsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Data,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

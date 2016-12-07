@@ -13,6 +13,37 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="card-background-page">
+  
+    <ion-card>
+        
+      <img src="assets/img/logo.jpg" style="filter:blur(3px);"/>
+      <div class="card-title">
+        <img [src]='team.Src' style="border-radius:15px; position: relative; left: 150px; top: -20px; width: 50px; border-radius: 15px;">
+        {{team.Name}}</div>
+      <div class="card-subtitle">{{team.Add}}</div>
+    </ion-card>
+  
+    <ion-list no-lines>
+      <ion-item>
+        <ion-thumbnail item-left><ion-icon name="construct"></ion-icon></ion-thumbnail>
+        <h2>{{mem.Carry}}</h2>
+      </ion-item>
+        <ion-item>
+        <ion-thumbnail item-left><ion-icon name="help-buoy"></ion-icon></ion-thumbnail>
+        <h2>{{mem.Mid}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left><ion-icon name="medical"></ion-icon></ion-thumbnail>
+        <h2>{{mem.Support1}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left><ion-icon name="medical"></ion-icon></ion-thumbnail>
+        <h2>{{mem.Support2}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left><ion-icon name="nuclear"></ion-icon></ion-thumbnail>
+        <h2>{{mem.Offlane}}</h2>
+      </ion-item>
+    </ion-list>
 </ion-content>

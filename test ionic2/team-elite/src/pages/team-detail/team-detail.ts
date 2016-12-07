@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the TeamDetail page.
@@ -12,11 +12,18 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'team-detail.html'
 })
 export class TeamDetailPage {
-
-  constructor(public navCtrl: NavController) {}
+  
+  team: any={};
+  mem: any={};
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    
+    let team = this.navParams.get('team');
+    if(typeof(team) !== "undefined"){
+			this.team = team;
+      this.mem = team.Mem;
+		}
+    console.log(this.team);
   }
 
 }
