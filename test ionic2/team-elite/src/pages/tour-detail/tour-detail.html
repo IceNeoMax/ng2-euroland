@@ -13,6 +13,32 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+  <img [src]='tour.Src'/>
+  <div>
+    <ion-segment [(ngModel)]="dota2">
+      <ion-segment-button  value="Description">
+        Description
+      </ion-segment-button>
+      <ion-segment-button value="Teams">
+        Teams
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="dota2">
+    <ion-list *ngSwitchCase="'Description'">
+       <ion-item> Hello </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Teams'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img [src]='tour.Src'>
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

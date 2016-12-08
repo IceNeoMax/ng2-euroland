@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Data } from '../providers/data';
+import { TeamDetailPage } from '../team-detail/team-detail';
 
 /*
   Generated class for the Teams page.
@@ -13,10 +15,17 @@ import { NavController } from 'ionic-angular';
 })
 export class TeamsPage {
 
-  constructor(public navCtrl: NavController) {}
+teams: any;
+  constructor(public navCtrl: NavController, public dataService:Data) {
+    
+  }
 
-  introTeam() {
-    console.log('Hello TeamsPage Page');
+  ionViewDidLoad() {
+    this.dataService.getTeams().then(data=> this.teams= data);
+  }
+
+  intoTeamDetail(team){
+    this.navCtrl.push(TeamDetailPage,{team:team});
   }
 
 }

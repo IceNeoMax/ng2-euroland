@@ -8,11 +8,13 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-
-  <ion-card  (click)="intoTourDetail(tour)">
-    <img src="assets/img/Navi.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card>
-
+  <ion-list no-lines>
+    <ion-item *ngFor="let tour of tours">
+      <ion-card  (click)="intoTourDetail(tour)">
+        <img [src]='tour.Src'/>
+        <div class="card-title">{{tour.Name}}</div>
+        <div class="card-subtitle">{{tour.Location}} • {{tour.Num}} Teams</div>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+
 
 /*
   Generated class for the TourDetail page.
@@ -9,14 +10,25 @@ import { NavController } from 'ionic-angular';
 */
 @Component({
   selector: 'page-tour-detail',
-  templateUrl: 'tour-detail.html'
+  templateUrl: 'tour-detail.html',
 })
 export class TourDetailPage {
 
-  constructor(public navCtrl: NavController) {}
+
+  tour: any={};
+
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+  }
 
   ionViewDidLoad() {
-    console.log('Hello TourDetailPage Page');
+    let tour = this.navParams.get('tour');
+    if(typeof(tour) !== "undefined"){
+			this.tour = tour;
+		}
+    console.log(this.tour);
   }
 
 }

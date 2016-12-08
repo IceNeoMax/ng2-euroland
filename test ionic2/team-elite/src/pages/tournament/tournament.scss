@@ -7,7 +7,7 @@ tournament {
   }
   ion-card img{
           // opacity: 0.8;
-          filter: brightness(0.75);
+          filter: brightness(.7) blur(2.5px);
       }
   
   .card-title {

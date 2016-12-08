@@ -8,6 +8,8 @@ import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { TourDetailPage } from '../pages/tour-detail/tour-detail';
 import { NewsPage } from '../pages/news/news';
 import { Data } from '../pages/providers/data';
+import { Tab2TeamsPage } from '../pages/tab2-teams/tab2-teams';
+import { Tab1DesPage } from '../pages/tab1-des/tab1-des';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { Data } from '../pages/providers/data';
     TeamsPage,
     TeamDetailPage,
     TourDetailPage,
-    NewsPage
+    NewsPage,
+    Tab1DesPage,
+    Tab2TeamsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,7 +35,9 @@ import { Data } from '../pages/providers/data';
    TeamsPage,
    TeamDetailPage,
     TourDetailPage,
-    NewsPage
+    NewsPage,
+    Tab1DesPage,
+    Tab2TeamsPage
   ],
   providers: [Data,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

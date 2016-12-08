@@ -15,5 +15,17 @@ export class Data {
 			.subscribe(res=> resolve(res.json()));
 		});
 	}
+	getTournaments(){
+		return new Promise(resolve=>{
+			this.http.get(`${this.baseUrl}/Locations.json`)
+			.subscribe(res=> resolve(res.json()));
+		});
+	}
+	getFollow(){
+		return new Promise(resolve=>{
+			this.http.get(`${this.baseUrl}/Follow.json`)
+			.subscribe(res=> resolve(res.json()));
+		});
+	}
 }
 
