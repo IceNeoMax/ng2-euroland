@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Data } from '../providers/data';
+import { TeamDetailPage } from '../team-detail/team-detail';
 
 
 /*
@@ -17,9 +19,10 @@ export class TourDetailPage {
 
   tour: any={};
 
+  teamsNum: number [];
+  teamsInvolve: any =[];
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public data:Data) {
     
   }
 
@@ -27,8 +30,18 @@ export class TourDetailPage {
     let tour = this.navParams.get('tour');
     if(typeof(tour) !== "undefined"){
 			this.tour = tour;
+      this.teamsNum = tour.Teams.split(",").map(item=> parseInt(item, 10) );
 		}
+
+    this.teamsNum.forEach(element => {
+      this.data.getTeam(element).then(data  =>  {this.teamsInvolve.push(data);
+        });
+      
+    });    
     console.log(this.tour);
+  }
+   intoTeamDetail(team){
+    this.navCtrl.push(TeamDetailPage,{team:team});
   }
 
 }

@@ -6,10 +6,9 @@ import { HomePage } from '../pages/home/home';
 import { TeamsPage } from '../pages/teams/teams';
 import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { TourDetailPage } from '../pages/tour-detail/tour-detail';
-import { NewsPage } from '../pages/news/news';
 import { Data } from '../pages/providers/data';
 import { Tab2TeamsPage } from '../pages/tab2-teams/tab2-teams';
-import { Tab1DesPage } from '../pages/tab1-des/tab1-des';
+import { Tab1NewsPage } from '../pages/tab1-news/tab1-news';
 
 
 @NgModule({
@@ -20,8 +19,7 @@ import { Tab1DesPage } from '../pages/tab1-des/tab1-des';
     TeamsPage,
     TeamDetailPage,
     TourDetailPage,
-    NewsPage,
-    Tab1DesPage,
+    Tab1NewsPage,
     Tab2TeamsPage
   ],
   imports: [
@@ -35,8 +33,7 @@ import { Tab1DesPage } from '../pages/tab1-des/tab1-des';
    TeamsPage,
    TeamDetailPage,
     TourDetailPage,
-    NewsPage,
-    Tab1DesPage,
+    Tab1NewsPage,
     Tab2TeamsPage
   ],
   providers: [Data,{provide: ErrorHandler, useClass: IonicErrorHandler}]

@@ -15,6 +15,12 @@ export class Data {
 			.subscribe(res=> resolve(res.json()));
 		});
 	}
+	getTeam(id){
+		return new Promise(resolve=>{
+			this.http.get(`${this.baseUrl}/Teams/`+(id-1)+'.json')
+			.subscribe(res=> resolve(res.json()));
+		});
+	}
 	getTournaments(){
 		return new Promise(resolve=>{
 			this.http.get(`${this.baseUrl}/Locations.json`)

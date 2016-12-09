@@ -10,14 +10,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Your Team</ion-title>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list no-lines>
+  <!--<ion-list no-lines>
     <ion-item-sliding *ngFor="let team of teams">
       <ion-item (click)="intoTeamDetail(team)">
         <ion-avatar item-left>
@@ -34,10 +33,9 @@
       </ion-item-options>
   </ion-item-sliding>
  
-  </ion-list>
+  </ion-list>-->
 
-  <!--<ion-tabs>
-    <ion-tab tabTitle="Description" [root]="Tab1DesPageTab" [rootParams]="{parent : tabParent}" tabIcon="basketball"></ion-tab>
-    <ion-tab tabTitle="Teams" [root]="Tab2TeamsPageTab" [rootParams]="{parent : tabParent}" tabIcon="podium"></ion-tab>
-  </ion-tabs>-->
-</ion-content>
+  <ion-tabs>
+    <ion-tab tabTitle="News" [root]="Tab1NewsPageTab" tabIcon="paper"></ion-tab>
+    <ion-tab tabTitle="Teams" [root]="Tab2TeamsPageTab" [rootParams]="1" tabIcon="logo-steam"></ion-tab>
+  </ion-tabs>

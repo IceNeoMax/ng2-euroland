@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { TeamDetailPage } from '../team-detail/team-detail';
 import { Data } from '../providers/data';
 import { Tab2TeamsPage } from '../tab2-teams/tab2-teams';
-import { Tab1DesPage } from '../tab1-des/tab1-des';
+import { Tab1NewsPage } from '../tab1-news/tab1-news';
 /*
   Generated class for the Home page.
 
@@ -18,15 +18,15 @@ export class HomePage {
 
   teams: any;
 
-    Tab1DesPageTab:any;
+    Tab1NewsPageTab:any;
   Tab2TeamsPageTab: any;
   constructor(public navCtrl: NavController, public dataService:Data) {
-    this.Tab1DesPageTab = Tab1DesPage;
+    this.Tab1NewsPageTab = Tab1NewsPage;
     this.Tab2TeamsPageTab = Tab2TeamsPage;
   }
 
   ionViewDidLoad() {
-    this.dataService.getTeams().then(data=> this.teams= data);
+    
   }
 
   intoTeamDetail(team){
