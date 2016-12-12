@@ -15,6 +15,7 @@ export class TeamDetailPage {
   
   team: any={};
   mem: any={};
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {

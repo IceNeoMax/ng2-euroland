@@ -17,16 +17,18 @@ export class TeamsPage {
 
 teams: any;
 tempteams:any;
+follows: any;
   constructor(public navCtrl: NavController, public dataService:Data) {
     
   }
 
   ionViewDidLoad() {
     this.dataService.getTeams().then(data=> {this.teams= data;this.tempteams=this.teams});
+    this.follows = this.dataService.getFollows();
   }
 
   intoTeamDetail(team){
-    this.navCtrl.push(TeamDetailPage,{team:team});
+    this.navCtrl.push(TeamDetailPage,{team:team,follow:this.follows[team.id-1],id:(team.id-1)});
   }
 
   getTeams(ev){
@@ -40,6 +42,12 @@ tempteams:any;
         return (item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  changeFollow(id){
+    this.follows[id]=!this.follows[id];
+    this.dataService.saveFollows(this.follows);
+    this.dataService.getFollows();
   }
 
 }

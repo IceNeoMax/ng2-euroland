@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
 @Injectable()
 export class Data {
 
-	todos: any = [];
+	follows: any = [];
 	private baseUrl = "https://team-elite-d8aa1.firebaseio.com/";
-	constructor(public http: Http) {
-
+	constructor(public http: Http, public storage: Storage) {
 	}
 	getTeams(){
 		return new Promise(resolve=>{
@@ -27,11 +27,28 @@ export class Data {
 			.subscribe(res=> resolve(res.json()));
 		});
 	}
-	getFollow(){
-		return new Promise(resolve=>{
-			this.http.get(`${this.baseUrl}/Follow.json`)
-			.subscribe(res=> resolve(res.json()));
-		});
+
+
+	getFollows(){
+		
+		this.storage.get('follows').then(res=> this.follows= res);
+		
+
+			if(this.follows.length > 0){
+				return this.follows;
+			} 
+			else {
+				this.storage.set('follows',[false,false,false,false,false,false,false,false,false,false]);
+				 this.storage.get('follows').then(res=> this.follows= res);
+				 return this.follows;
+			}
 	}
+
+	saveFollows(follows){
+		this.storage.set('follows',follows);
+	}
+	
+	
+
 }
 

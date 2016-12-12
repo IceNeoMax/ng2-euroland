@@ -26,7 +26,12 @@
         </ion-avatar>      
         <h2 (click)="intoTeamDetail(team)">{{team.Name}}</h2>
         <p (click)="intoTeamDetail(team)">{{team.Add}} • {{team.Since}}</p>
-        <button ion-button item-right color="danger" clear><ion-icon color="danger" name="md-heart-outline" style="font-size:1.6em;"></ion-icon></button>
+
+        <button ion-button item-right (click)='changeFollow(team.id-1)' color="danger" clear small>
+          <ion-icon name="md-heart-outline" style="font-size:1.6em;" *ngIf='!follows[team.id-1]' clear></ion-icon>
+          <ion-icon name="md-heart" style="font-size:1.6em;" *ngIf='follows[team.id-1]' clear></ion-icon>
+        </button>
+       
         <ion-icon color="danger" name="star" item-right>{{team.Rate}}</ion-icon>
       </ion-item>
       
