@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Data } from '../providers/data';
+import { TeamDetailPage } from '../team-detail/team-detail';
 
 /*
   Generated class for the Tab2Teams page.
@@ -12,11 +14,18 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'tab2-teams.html'
 })
 export class Tab2TeamsPage {
+  
+  teams: any;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public dataService: Data) {}
 
   ionViewDidLoad() {
-    console.log('Hello Tab2TeamsPage Page');
+    this.dataService.getTeams().then(data  => {this.teams= data;});
+    this.dataService.getFollows();
+
   }
 
+   intoTeamDetail(team){
+    this.navCtrl.push(TeamDetailPage,{team:team,follow:this.dataService.follows[team.id-1]});
+  }
 }

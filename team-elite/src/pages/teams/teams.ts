@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { Data } from '../providers/data';
 import { TeamDetailPage } from '../team-detail/team-detail';
 
@@ -17,18 +17,26 @@ export class TeamsPage {
 
 teams: any;
 tempteams:any;
-follows: any;
-  constructor(public navCtrl: NavController, public dataService:Data) {
+  constructor(public navCtrl: NavController, public dataService:Data, private loadingCtrl:LoadingController) {
     
   }
 
   ionViewDidLoad() {
-    this.dataService.getTeams().then(data=> {this.teams= data;this.tempteams=this.teams});
-    this.follows = this.dataService.getFollows();
+    let loader = this.loadingCtrl.create({
+      content:'Getting Teams...',
+      spinner:'bubbles'
+    });
+    loader.present().then(()=>{
+       this.dataService.getTeams().then(data=> {this.teams= data;this.tempteams=this.teams});
+      this.dataService.getFollows();
+      console.log( this.dataService.follows);
+      loader.dismiss();
+    })
+   
   }
 
   intoTeamDetail(team){
-    this.navCtrl.push(TeamDetailPage,{team:team,follow:this.follows[team.id-1],id:(team.id-1)});
+    this.navCtrl.push(TeamDetailPage,{team:team,follow:this.dataService.follows[team.id-1]});
   }
 
   getTeams(ev){
@@ -45,9 +53,7 @@ follows: any;
   }
 
   changeFollow(id){
-    this.follows[id]=!this.follows[id];
-    this.dataService.saveFollows(this.follows);
-    this.dataService.getFollows();
+    this.dataService.changeFollow(id);
   }
 
 }

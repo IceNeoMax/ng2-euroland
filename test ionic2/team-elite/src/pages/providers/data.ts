@@ -31,23 +31,50 @@ export class Data {
 
 	getFollows(){
 		
-		this.storage.get('follows').then(res=> this.follows= res);
-		
+		// this.storage.get('follows').then(res=> 
+		// 	{
+		// 		this.follows= res;
+		// 		if(this.follows.length > 0){
+		// 			console.log( this.follows);
+		// 			return this.follows;
+		// 		} 
+		// 		else if(this.follows.length == 0) {
+		// 			this.storage.set('follows',[false,false,false,false,false,false,false,false,false,false]);
+		// 			 this.storage.get('follows').then(res=> {this.follows= res; return this.follows;});
+					 
+		// 		}
+		// 	});	
+		return new Promise(resolve => {
 
 			if(this.follows.length > 0){
-				return this.follows;
-			} 
-			else {
-				this.storage.set('follows',[false,false,false,false,false,false,false,false,false,false]);
-				 this.storage.get('follows').then(res=> this.follows= res);
-				 return this.follows;
+
+				resolve(this.follows);
+
+			} else {
+
+				this.storage.get('follows').then((follows) => {
+
+					if(follows && typeof(follows) != "undefined"){
+						this.follows = follows;
+					}
+
+					resolve(this.follows)
+
+				});
+
 			}
+
+		});
 	}
 
-	saveFollows(follows){
-		this.storage.set('follows',follows);
-	}
-	
+	// saveFollows(follow){
+	// 	this.storage.set('follows',this.follows);
+	// }
+	changeFollow(id){
+    this.follows[id]=!this.follows[id];
+	this.storage.set('follows',this.follows);
+    //this.dataService.saveFollows(this.dataService.follows);
+  }
 	
 
 }

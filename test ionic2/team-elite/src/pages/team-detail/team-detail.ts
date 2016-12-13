@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Data } from '../providers/data';
 
 /*
   Generated class for the TeamDetail page.
@@ -16,7 +17,7 @@ export class TeamDetailPage {
   team: any={};
   mem: any={};
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data) {}
 
   ionViewDidLoad() {
     let team = this.navParams.get('team');
@@ -24,7 +25,11 @@ export class TeamDetailPage {
 			this.team = team;
       this.mem = team.Mem;
 		}
-    console.log(this.team);
+  }
+
+  changeFollow(id){
+    this.dataService.changeFollow(id);
+    this.navCtrl.pop();
   }
 
 }

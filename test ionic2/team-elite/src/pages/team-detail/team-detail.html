@@ -48,6 +48,9 @@
     </ion-list>
 
     <ion-fab right middle>
-      <button ion-fab color="danger"><ion-icon name="md-heart-outline"></ion-icon></button>
+      <button ion-fab color="light" (click)='changeFollow(team.id-1);'>
+        <ion-icon color="danger" name="md-heart-outline" *ngIf='!dataService.follows[team.id-1]'></ion-icon>
+        <ion-icon color="danger" name="md-heart" *ngIf='dataService.follows[team.id-1]'></ion-icon>
+      </button>
     </ion-fab>
 </ion-content>
