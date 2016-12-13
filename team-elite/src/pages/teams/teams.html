@@ -21,7 +21,7 @@
   <ion-list no-lines>
     <ion-item-sliding *ngFor="let team of teams">
       <ion-item>
-        <ion-avatar item-left (click)="intoTeamDetail(team)">
+        <ion-avatar [@bounceInBottom]="teamsState" item-left (click)="intoTeamDetail(team)">
           <img [src]='team.Src'>
         </ion-avatar>      
         <h2 (click)="intoTeamDetail(team)">{{team.Name}}</h2>

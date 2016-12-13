@@ -16,7 +16,7 @@
 <ion-content padding>
  <ion-list no-lines *ngFor="let team of teams">
       <ion-item *ngIf="dataService.follows[team.id-1]">
-        <ion-avatar item-left (click)="intoTeamDetail(team)">
+        <ion-avatar [@bounceInBottom]="teamsState" item-left (click)="intoTeamDetail(team)">
           <img [src]='team.Src'>
         </ion-avatar>      
         <h2 (click)="intoTeamDetail(team)">{{team.Name}}</h2>

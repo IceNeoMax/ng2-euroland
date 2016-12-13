@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, trigger, state, style, transition, animate } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Data } from '../providers/data';
 import { TeamDetailPage } from '../team-detail/team-detail';
@@ -11,12 +11,21 @@ import { TeamDetailPage } from '../team-detail/team-detail';
 */
 @Component({
   selector: 'page-tab2-teams',
-  templateUrl: 'tab2-teams.html'
+  templateUrl: 'tab2-teams.html',
+  animations: [
+   trigger('bounceInBottom', [
+      state('in', style({
+        transform: 'rotate(360deg)'
+      })),
+      transition('void => *', animate('1400ms ease'))
+    ])
+  ]
+
 })
 export class Tab2TeamsPage {
   
   teams: any;
-
+  teamsState : string = "in";
   constructor(public navCtrl: NavController, public dataService: Data) {}
 
   ionViewDidLoad() {

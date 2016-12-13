@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, trigger, state, style, transition, animate } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Data } from '../providers/data';
 import { TeamDetailPage } from '../team-detail/team-detail';
@@ -11,12 +11,22 @@ import { TeamDetailPage } from '../team-detail/team-detail';
 */
 @Component({
   selector: 'page-teams',
-  templateUrl: 'teams.html'
+  templateUrl: 'teams.html',
+  animations: [
+   trigger('bounceInBottom', [
+      state('in', style({
+        transform: 'rotate(360deg)'
+      })),
+      transition('void => *', animate('1400ms ease'))
+    ])
+  ]
 })
 export class TeamsPage {
 
-teams: any;
-tempteams:any;
+  teams: any;
+  tempteams:any;
+  teamsState : string = "in";
+
   constructor(public navCtrl: NavController, public dataService:Data, private loadingCtrl:LoadingController) {
     
   }

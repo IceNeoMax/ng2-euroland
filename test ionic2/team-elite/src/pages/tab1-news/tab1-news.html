@@ -5,10 +5,16 @@
   Ionic pages and navigation.
 -->
 
+<ion-header>
 
+  <ion-navbar>
+    
+  </ion-navbar>
+
+</ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card [@flyInBottomSlow]="logoState">
     <img src="assets/img/EG.jpg"/>
     <ion-card-content>
       <ion-card-title>
@@ -27,7 +33,7 @@
     </ion-card-content>
   </ion-card>
 
-<ion-card>
+<ion-card [@flyInBottomSlow]="logoState">
     <img src="assets/img/VP.jpg"/>
     <ion-card-content>
       <ion-card-title>
