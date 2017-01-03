@@ -5,12 +5,16 @@ import { HomePage } from '../pages/home/home';
 import { EditTodo } from '../pages/edit-todo/edit-todo';
 import { Data } from '../providers/data';
 import { Storage } from '@ionic/storage';
+import { TestPage } from '../pages/test/test';
+import { ElasticHeader } from '../components/elastic-header/elastic-header';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    EditTodo
+    EditTodo,
+    TestPage,
+    ElasticHeader
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -19,7 +23,8 @@ import { Storage } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    EditTodo
+    EditTodo,
+    TestPage
   ],
   providers: [Data, Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
